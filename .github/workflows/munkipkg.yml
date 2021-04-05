@@ -25,10 +25,8 @@ jobs:
           echo ${{ steps.munkipkg.outputs.* }}
           echo ${{join(steps.munkipkg.outputs.*, '\n')}}
 
-      # - name: Create Release
-      #   uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
-      #   with:
-      #     files: build/*.pkg
-      #     tag_name: ${{ env.TAG }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release
+        uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
+        with:
+          files: ${{ steps.munkipkg.outputs.filepath }}
+          tag_name: ${{ steps.munkipkg.outputs.tag }}
