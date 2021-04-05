@@ -22,7 +22,7 @@ jobs:
           echo Tag: ${{ steps.munkipkg.outputs.tag }}
           echo File: ${{ steps.munkipkg.outputs.filename }}
           echo Path: ${{ steps.munkipkg.outputs.filepath }}
-          echo ${{ steps.munkipkg.outputs }}
+          echo ${{ steps.munkipkg.outputs.* }}
           echo ${{ steps.munkipkg }}
 
       # - name: Create Release
