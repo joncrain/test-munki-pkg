@@ -17,16 +17,10 @@ jobs:
         id: munkipkg
         uses: joncrain/munkipkg-action@main
 
-      - name: Echo
-        run: |
-          echo Tag: tag ${{ steps.munkipkg.outputs.tag }}
-          echo File: filename ${{ steps.munkipkg.outputs.filename }}
-          echo Path: filepath ${{ steps.munkipkg.outputs.filepath }}
-          echo ${{ steps.munkipkg.outputs.* }}
-          echo ${{join(steps.munkipkg.outputs.*, '\n')}}
-
       - name: Create Release
         uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
         with:
           files: ${{ steps.munkipkg.outputs.filepath }}
           tag_name: ${{ steps.munkipkg.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
