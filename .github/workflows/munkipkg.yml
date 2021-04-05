@@ -18,9 +18,12 @@ jobs:
 
       - name: Echo
         run: |
-          echo ${{ steps.get-build-file.outputs.tag }}
-          echo ${{ steps.get-build-file.outputs.filename }}
-          echo ${{ steps.get-build-file.outputs.filepath }}
+          echo Tag: ${{ steps.munkipkg.outputs.tag }}
+          echo File: ${{ steps.munkipkg.outputs.filename }}
+          echo Path: ${{ steps.munkipkg.outputs.filepath }}
+          echo 1 ${{ munkipkg.outputs.tag }}
+          echo 2 ${{ outputs.tag }}
+          echo 3 ${{ tag }}
 
       # - name: Create Release
       #   uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
