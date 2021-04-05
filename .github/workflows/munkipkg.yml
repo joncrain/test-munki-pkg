@@ -15,13 +15,13 @@ jobs:
 
       - name: Run munkipkg
         id: munkipkg
-        uses: joncrain/munkipkg-action@v0.1
+        uses: joncrain/munkipkg-action@main
 
       - name: Echo
         run: |
-          echo Tag: ${{ steps.munkipkg.outputs.tag }}
-          echo File: ${{ steps.munkipkg.outputs.filename }}
-          echo Path: ${{ steps.munkipkg.outputs.filepath }}
+          echo Tag: tag ${{ steps.munkipkg.outputs.tag }}
+          echo File: filename ${{ steps.munkipkg.outputs.filename }}
+          echo Path: filepath ${{ steps.munkipkg.outputs.filepath }}
           echo ${{ steps.munkipkg.outputs.* }}
           echo ${{join(steps.munkipkg.outputs.*, '\n')}}
 
