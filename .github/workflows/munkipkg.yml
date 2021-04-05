@@ -23,7 +23,7 @@ jobs:
           echo File: ${{ steps.munkipkg.outputs.filename }}
           echo Path: ${{ steps.munkipkg.outputs.filepath }}
           echo ${{ steps.munkipkg.outputs.* }}
-          echo ${{ steps.munkipkg }}
+          echo ${{join(steps.munkipkg.outputs.*, '\n')}}
 
       # - name: Create Release
       #   uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
