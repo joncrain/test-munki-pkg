@@ -1,0 +1,31 @@
+name: munkipkg Build
+
+on:
+  workflow_dispatch: # manually triggered
+
+jobs:
+  munkipkg:
+    runs-on: macos-latest
+    timeout-minutes: 5 # Keeps your builds from running too long
+    steps:
+      - name: Checkout (this repo)
+        uses: actions/checkout@25a956c84d5dd820d28caab9f86b8d183aeeff3d # Pin SHA1 hash instead of version
+        with:
+          lfs: true
+
+      - name: Run munkipkg
+        uses: joncrain/munkipkg-action@v0.1
+
+      - name: Echo
+        run: |
+          echo ${{ steps.get-build-file.outputs.tag }}
+          echo ${{ steps.get-build-file.outputs.filename }}
+          echo ${{ steps.get-build-file.outputs.filepath }}
+
+      # - name: Create Release
+      #   uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
+      #   with:
+      #     files: build/*.pkg
+      #     tag_name: ${{ env.TAG }}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
