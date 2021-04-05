@@ -14,6 +14,7 @@ jobs:
           lfs: true
 
       - name: Run munkipkg
+        id: munkipkg
         uses: joncrain/munkipkg-action@v0.1
 
       - name: Echo
@@ -21,7 +22,8 @@ jobs:
           echo Tag: ${{ steps.munkipkg.outputs.tag }}
           echo File: ${{ steps.munkipkg.outputs.filename }}
           echo Path: ${{ steps.munkipkg.outputs.filepath }}
-
+          echo ${{ steps.munkipkg.outputs }}
+          echo ${{ steps.munkipkg }}
 
       # - name: Create Release
       #   uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
