@@ -21,7 +21,7 @@ jobs:
 
       - name: Run munkipkg
         id: munkipkg
-        uses: joncrain/munkipkg-action@6b4b14b933bf6e5ad34cc1e4565dadac4a31fe41
+        uses: joncrain/munkipkg-action@9c22b902533933ac55152cb349da465958bd3b7e
 
       - name: Create Release
         uses: softprops/action-gh-release@affa18ef97bc9db20076945705aba8c516139abd
