@@ -5,6 +5,6 @@ on:
 
 jobs:
   build-pkg:
-    uses: joncrain/workflow-templates/.github/workflows/reusable-munkipkg.yaml@main
+    uses: joncrain/workflow-templates/.github/workflows/reusable_munkipkg.yaml@main
     with:
       pkg_subdir: "testapp"
