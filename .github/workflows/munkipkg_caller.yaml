@@ -1,0 +1,10 @@
+name: munkipkg-caller
+
+on:
+  workflow_dispatch: # manually triggered
+
+jobs:
+  build-pkg:
+    uses: joncrain/workflow-templates/.github/workflows/reusable-munkipkg.yaml@main
+    with:
+      pkg_subdir: "testapp"
