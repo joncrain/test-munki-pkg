@@ -8,3 +8,5 @@ jobs:
     uses: joncrain/workflow-templates/.github/workflows/reusable_munkipkg.yaml@main
     with:
       pkg_subdir: "testapp"
+    secrets:
+      greeting: ${{ secrest.TEST }}
