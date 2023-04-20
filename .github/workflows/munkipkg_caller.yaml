@@ -9,4 +9,4 @@ jobs:
     with:
       pkg_subdir: "testapp"
     secrets:
-      greeting: ${{ secrest.TEST }}
+      greeting: ${{ secrets.TEST }}
